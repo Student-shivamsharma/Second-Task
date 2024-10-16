@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      color : black;
+    }
+    body{
+      /* background-image: url("imgaes/pexels-celine-paris-3776818-16155467.jpg"); */
+      background-image: url("imgaes/pexels-molly-ff-260673067-19618459.jpg");
+      /* background-image: url("imgaes/pexels-radubradu-395822838-16292048.jpg"); */
+      background-size: cover;
+      height: 100vh;
+      width : 100vw;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100vw;
+      /* background-image: url("bg-line.jpg"); */
+      background-size: cover;
+      position: relative;
+    }
+    h1 {
+      text-align: center;
+      font-size: 5vmin;
+      margin-top: 2vmin;
+      font-weight: bolder;
+    }
+    form {
+      border: 5px solid black;
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      /* width: 100vmin; */
+      /* background-color: silver; */
+      width : 60vw;
+      backdrop-filter: blur(15px);
+      padding: 2vmin;
+      border-radius: 10px;
+      z-index: 1;
+      font-weight: bolder;
+    }
+    /* .container form {
+      z-index: 1;
+    } */
+    form label {
+      margin: 0.5vmin;
+    }
+    form label p {
+      font-size: 3vmin;
+    }
+    input {
+
+      width : 50vw;
+      height: 5vmin;
+      margin-bottom: 1vmin;
+    }
+    #btn {
+      display: block;
+      margin: 2vmin;
+      height: 5vmin;
+      width: 50vw;
+      /* background-color: #007BFF; */
+      background-color: white;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      font-weight: bolder;
+      text-shadow: 1px 1px 1px white;
+      /* transition: 6s ease-in 0s; */
+      background: linear-gradient(orangered,black);
+      font-size: 3vmin;
+    }
+   
+    .list {
+      color: white;
+      background : black;
+      border: 2px solid white;
+      border-radius: 10px;
+      padding: 4px;
+      margin: 2vmin 0;
+    }
+    .list ul {
+      list-style: none;
+      
+    }
+    ul li{
+      color : white;
+    }
+    .hide {
+      display: none;
+    }
+    .list li.green {
+      color: green;
+    }
+    .list li.red {
+      color: red;
+    }
+    #showPassword {
+      width: 8vmin;
+      height: 3.3vmin;
+    }
+    .show {
+      font-size: 4vmin;
+      text-align: center;
+    }
+    input{
+      background: transparent;
+      border : none;
+      border-top: 4px solid white;
+      border-bottom: 2px solid white;
+      /* border-top: 4px solid orangered;
+      border-bottom: 2px solid orangered; */
+      border-radius: 10px;
+      font-size: 3vmin;
+    }
+    input::placeholder{
+      font-size: 3vmin;
+      color : white;
+      opacity: 0.4;
+      padding: 5px;;
+    }
+    .backicon{
+      background: transparent;
+       border: none;
+       background-color: red;
+    }
+    .fa-hand-point-left{
+      font-size: 10vmin;
+      color : white;
+      text-align: center;
+      position: relative;
+      
+    }
+
+  form i{
+    font-size: 5vmin;
+    border: 2px solid black;
+    margin: 5px;
+    position: relative;
+    top : 5px;
+  }
+  form i:hover{
+    color : white;
+  }
+   @media (max-width : 450px){
+    form{
+      width : 70vw;
+    }
+   }
+  </style>
+</head>
+<body>
+  <button class="backicon"><a href="index2.html"><i class="fa-solid fa-hand-point-left"></i></a></button>
+  <div class="container">
+    <form id="registration-form">
+      <h1>REGISTRATION FORM</h1>
+      <label for="first-name">
+        <p>Enter First Name</p>
+        <input type="text" id="first-name" placeholder="Enter First Name" >
+        <i class="fa-solid fa-user"></i>
+      </label>
+      <label for="last-name">
+        <p>Enter Last Name</p>
+        <input type="text" id="last-name" placeholder="Enter Last Name" >
+        <i class="fa-solid fa-user"></i>
+      </label>
+      <label for="email">
+        <p>Enter Email</p>
+        <input type="email" id="email" placeholder="Enter Email" >
+        <i class="fa-solid fa-envelope"></i>
+      </label>
+      <label for="password">
+        <p>Enter Password</p>
+        <input type="password" id="password" placeholder="Enter Password" >
+        <i class="fa-solid fa-lock"></i>
+        <div class="list hide">
+          <ul>
+            <li class="special">Password must start with a special character</li>
+            <li class="upper">Password must contain an uppercase letter</li>
+            <li class="lower">Password must contain a lowercase letter</li>
+            <li class="length">Password must be longer than 6 characters</li>
+          </ul>
+        </div>
+      </label>
+      <label for="confirm-password">
+        <p>Confirm Password</p>
+        <input type="password" id="confirm-password" placeholder="Confirm Password" >
+        <i class="fa-solid fa-lock"></i>
+      </label>
+      <div class="show">
+        <input type="checkbox" id="showPassword"> ShowPassword
+      </div>
+      <button type="submit" id="btn">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    const form = document.querySelector('#registration-form')
+    const firstName = document.querySelector('#first-name')
+    const lastName = document.querySelector('#last-name')
+    const email = document.querySelector('#email')
+    const password = document.querySelector('#password')
+    const confirmPassword = document.querySelector('#confirm-password')
+    const list = document.querySelector('.list')
+    const special = document.querySelector('.special')
+    const upper = document.querySelector('.upper')
+    const lower = document.querySelector('.lower')
+    const length = document.querySelector('.length')
+    const showPassword = document.querySelector('#showPassword')
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (checkForm()) {
+        alert("Form submitted successfully!");
+        clear()
+      }
+    })
+
+    function clear() {
+      firstName.value = ""
+      lastName.value = ""
+      password.value = ""
+      confirmPassword.value = "";
+      email.value = "";
+    }
+    firstName.addEventListener('input' , () => {
+    value = firstName.value;
+    console.log(value);
+    for(let i=0;i<value.length;i++){
+      const code = value.charCodeAt(i);
+      console.log(code);
+      if(code >= 48 && code <=57){
+        firstName.style.color = "red";
+      }
+      else{
+        firstName.style.color = "black";
+      }
+    }
+  })
+    lastName.addEventListener('input' , () => {
+    value = lastName.value;
+    console.log(value);
+    for(let i=0;i<value.length;i++){
+      const code = value.charCodeAt(i);
+      console.log(code);
+      if(code >= 48 && code <=57){
+        lastName.style.color = "red";
+      }
+      else{
+        lastName.style.color = "black";
+      }
+    }
+  })
+
+    function checkForm() {
+      if (containsNumber(firstName.value)) {
+        alert("First name cannot contain number")
+        return false;
+      }
+      if (containsNumber(lastName.value)) {
+        alert("last name cannot contain number.")
+        return false;
+      }
+
+      if (email.value.endsWith("@gmail.com") == false) {
+        alert("Email should end with @gmail.com")
+        return false;
+      }
+
+      if (checkPass() == false) {
+        alert("Password does not have the correct format.");
+        return false;
+      }
+
+      if (password.value !== confirmPassword.value) {
+        alert("Passwords do not match!");
+        return false
+      }
+
+      return true
+    }
+
+    function containsNumber(str) {
+      for (let i=0; i<str.length; i++) {
+        if (!isNaN(str[i])) {
+          return true;
+        }
+      }
+      return false
+    }
+
+    function checkPass() {
+      const value = password.value;
+      let hasSpecialChar = false
+      let hasCorrectLength = value.length > 6;
+      let hasLowerCase = false;
+      let hasUpperCase = false;
+
+      const str = '!@#$%^&*()+-=[]/?'
+      for(let i=0;i<str.length;i++){
+         if(value.includes(str[i])){
+          hasSpecialChar = true;
+         }
+      }
+      
+      for (let i=0; i<value.length; i++) {
+        if (value[i] >='A' && value[i]<= 'Z') {
+          hasUpperCase = true;
+        }
+         else if(value[i]>='a' && value[i]<='z') {
+          hasLowerCase = true;
+        }
+      }
+
+      special.classList.toggle('green', hasSpecialChar)
+      special.classList.toggle('red', hasSpecialChar == false);
+
+      upper.classList.toggle('green', hasUpperCase)
+      upper.classList.toggle('red', hasUpperCase==false)
+
+      lower.classList.toggle('green', hasLowerCase)
+      lower.classList.toggle('red', hasLowerCase == false)
+
+      length.classList.toggle('green', hasCorrectLength);
+      length.classList.toggle('red', hasCorrectLength == false)
+
+      return (hasSpecialChar && hasUpperCase && hasLowerCase && hasCorrectLength)
+    }
+
+    password.addEventListener('input', checkPass);
+    password.addEventListener('focus', () => {
+      list.classList.remove('hide');
+    });
+    password.addEventListener('blur', () => {
+      list.classList.add('hide');
+    });
+    showPassword.addEventListener('change', () => {
+      if (showPassword.checked) {
+        password.type = 'text';
+        confirmPassword.type = 'text';
+      } 
+      else {
+        password.type = 'password';
+        confirmPassword.type = 'password';
+      }
+    })
+  </script>
+</body>
+</html>
