@@ -202,11 +202,11 @@
 
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      if (validateForm()) {
+      if (checkForm()) {
         alert("Form submitted successfully!");
-       clear()
+       clear();
       }
-    });
+    })
     function clear(){
       firstName.value=""
       lastName.value =""
@@ -215,9 +215,9 @@
       email.value = "";
     }
 
-    function validateForm() {
+    function checkForm() {
       if (patterns.number.test(firstName.value) || patterns.number.test(lastName.value)) {
-        alert("first name and llast name must not contain numbers.");
+        alert("first name and llast name must not conatin numbers.");
         firstName.style.color = "red"
         lastName.style.color = "red";
         return false;
@@ -229,7 +229,7 @@
         return false;
       }
 
-      if (!validatePassword()) {
+      if (!checkPass()) {
         alert("password has not correct format.");
         return false;
       }
@@ -242,7 +242,7 @@
       return true;
     }
 
-    function validatePassword() {
+    function checkPass() {
       const value = password.value;
       special.classList.toggle('green', patterns.specialChar.test(value));
       special.classList.toggle('red', !patterns.specialChar.test(value));
@@ -253,8 +253,10 @@
       lower.classList.toggle('green', patterns.lowercase.test(value));
       lower.classList.toggle('red', !patterns.lowercase.test(value));
       
-      length.classList.toggle('green', value.length > 6);
-      length.classList.toggle('red', value.length <= 6);
+      length.classList.toggle('green',patterns.length.test(value));
+      length.classList.toggle('red', !patterns.length.test(value));
+      // length.classList.toggle('green', value.length > 6);
+      // length.classList.toggle('red', value.length <= 6);
 
 
       return (
@@ -263,10 +265,13 @@
       )
     }
 
-    password.addEventListener('input', validatePassword)
-    password.addEventListener('focus', () => list.classList.remove('hide'))
-    password.addEventListener('blur', () => list.classList.add('hide'))
-
+    password.addEventListener('input', checkPass)
+    password.addEventListener('focus' , () => {
+      list.classList.remove('hide')
+    })
+    password.addEventListener('blur' , () => {
+      list.classList.remove('hide')
+    })
     showPassword.addEventListener('change' , () => {
        if(showPassword.checked){
         password.type = 'text';
