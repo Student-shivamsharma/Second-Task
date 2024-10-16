@@ -9,7 +9,6 @@
     * {
       margin: 0;
       padding: 0;
-      /* color : #FFC67D */
       color : black;
     }
     body{
@@ -127,30 +126,54 @@
       opacity: 0.4;
       padding: 5px;;
     }
+    .backicon{
+      background: transparent;
+       border: none;
+       background-color: red;
+    }
+    .fa-hand-point-left{
+      font-size: 10vmin;
+      color : white;
+      text-align: center;
+      position: relative;
+      
+    }
 
-  
+  form i{
+    font-size: 5vmin;
+    border: 2px solid black;
+    margin: 10px;
+  }
    
   </style>
 </head>
 <body>
+  <!-- <div class="backicon">
+  <i class="fa-solid fa-hand-point-left"></i>
+</div> -->
+<button class="backicon"><a href="index2.html"><i class="fa-solid fa-hand-point-left"></i></a></button>
   <div class="container">
     <form id="registration-form">
       <h1>REGISTRATION FORM</h1>
       <label for="first-name">
         <p>Enter First Name</p>
         <input type="text" id="first-name" placeholder="Enter First Name" >
+        <i class="fa-solid fa-user"></i>
       </label>
       <label for="last-name">
         <p>Enter Last Name</p>
         <input type="text" id="last-name" placeholder="Enter Last Name" >
+        <i class="fa-solid fa-user"></i>
       </label>
       <label for="email">
         <p>Enter Email</p>
         <input type="email" id="email" placeholder="Enter Email" >
+        <i class="fa-solid fa-envelope"></i>
       </label>
       <label for="password">
         <p>Enter Password</p>
         <input type="password" id="password" placeholder="Enter Password" >
+        <i class="fa-solid fa-lock"></i>
         <div class="list hide">
           <ul>
             <li class="special">Password must start with a special character</li>
@@ -163,6 +186,7 @@
       <label for="confirm-password">
         <p>Confirm Password</p>
         <input type="password" id="confirm-password" placeholder="Confirm Password" >
+        <i class="fa-solid fa-lock"></i>
       </label>
       <div class="show">
         <input type="checkbox" id="showPassword"> ShowPassword
@@ -189,7 +213,10 @@
     const length = document.querySelector('.length');
     const showPassword = document.querySelector('#showPassword');
     const heart = document.querySelector('.heart')
-    
+    const backIcon = document.querySelector('.fa-solid')
+    backIcon.addEventListener('click' , () => {
+      `<a href="index2.html"></a>`
+    })
     
     const patterns = {
       number: /[0123456789]/,
